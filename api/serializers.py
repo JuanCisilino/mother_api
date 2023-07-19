@@ -11,6 +11,13 @@ class UsuarioSerializer(serializers.ModelSerializer):
         model = Usuario
         fields = ('__all__')
 
+from .models import Pokemon
+
+class PokemonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pokemon
+        fields = ('__all__')
+
 from .models import Doctor, Paciente, HistoriaClinica, VademecumGenerico, VademecumMarca, Receta
 
 class DoctorSerializer(serializers.ModelSerializer):

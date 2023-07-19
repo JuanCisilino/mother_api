@@ -1,5 +1,25 @@
 from django.db import models
 
+class Pokemon(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=100)
+    nick_name = models.CharField(max_length=3000)
+    favorite = models.BooleanField()
+    types = models.CharField(max_length=3000)
+    # evolves_to = models.CharField(max_length=3000)
+    # evolves_from = models.CharField(max_length=3000)
+    base_url = models.CharField(max_length=3000)
+    list_img = models.CharField(max_length=3000)
+    det_img = models.CharField(max_length=3000)
+    flavor = models.CharField(max_length=3000)
+    strong_against = models.CharField(max_length=3000)
+    weak_against = models.CharField(max_length=3000)
+    no_damage_to = models.CharField(max_length=3000)
+    no_damage_from = models.CharField(max_length=3000)
+
+    def __str__(self):
+        return self.name
+
 class Usuario(models.Model):
     email = models.EmailField(primary_key=True)
     nombre = models.CharField(max_length=30)

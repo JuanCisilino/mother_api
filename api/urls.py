@@ -1,8 +1,11 @@
 from django.urls import path
 from .views import ProductoList, UsuarioList, ProductoDetail, UsuarioDetail, home, token
+from .views import PokemonList, init
 from .views import PacienteListCreate, PacienteRetrieveUpdateDestroy, DoctorListCreate, DoctorRetrieveUpdateDestroy, HistoriasListCreate, HistoriasRetrieveUpdateDestroy, VademecumMarcaListCreate, VademecumGenericoListCreate, RecetaListCreate, RecetaRetrieveUpdateDestroy
 
 urlpatterns = [
+    path('pokeapi/init', init, name='Home'),
+    path('pokeapi/list', PokemonList.as_view()),
     path('wmapi/initProducts/',ProductoList.as_view()),
     path('wmapi/initUsers/',UsuarioList.as_view()),
     path('wmapi/users/<str:pk>',UsuarioDetail.as_view()),
