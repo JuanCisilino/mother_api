@@ -16,6 +16,10 @@ def init(request):
             data = response.json()
             result_list = data['results']
             if Pokemon.objects.count() != len(result_list):
+
+                for poke in Pokemon.objects.all():
+                    poke.delete()
+
                 for pokemon in result_list:
                     pokelocal = Pokemon()
                     pokelocal.name = pokemon['name']
