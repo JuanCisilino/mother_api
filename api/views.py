@@ -130,8 +130,6 @@ def init(request):
                     print(pokelocal.id)
                     print(pokelocal.name)
                     pokelocal.save(pokelocal)
-                    # print(pokelocal.evolves_from)
-                    # print(pokelocal.evolves_to)
 
             else: 
                 print("Up To Date")
